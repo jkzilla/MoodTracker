@@ -7,8 +7,8 @@ orbs:
 jobs:
   build:
     docker: 
-      image: gradle/gradle:6.0.0-jdk8-alpine
-      image: circleci/android:api-28-alpha
+      - image: gradle/gradle:6.0.0-jdk8-alpine
+      - image: circleci/android:api-28-alpha
       environment:
         JVM_OPTS: -Xmx3200m    #??????? android specific?
         JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64 #scripts reference this to find jdk could be added android orb
