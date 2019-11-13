@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Create gradle.properties
           command: |
-            echo 'export GRADLE_PROPERTIES=${HOME}/.gradle/gradle.properties' >> $BASH_ENV
+            echo "export GRADLE_PROPERTIES=${HOME}'/.gradle/gradle.properties'"" >> $BASH_ENV
             source $BASH_ENV
             echo $GRADLE_PROPERTIES
       - run: 
