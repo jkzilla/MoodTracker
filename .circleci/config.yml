@@ -7,7 +7,7 @@ orbs:
 jobs:
   build_only:
     docker: 
-      - image: gradle/gradle:6.0.0-jdk8-alpine
+      - image: gradle/gradle:6.0.0-jdk8
       - image: circleci/android:api-28-alpha
     environment:
       JVM_OPTS: -Xmx3200m
