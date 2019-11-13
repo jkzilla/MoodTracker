@@ -21,11 +21,13 @@ jobs:
           name: Setup Gradle
           command: |
             gradle -v # Gradle 5.5.1
-            cd ${HOME}/../opt/gradle-5.5.1
+            cd ${HOME}/
+            cd ../opt/gradle-5.5.1
             ls
             cd ~
             ls
-            cd ${HOME}/../opt/gradle
+            cd ${HOME}/
+            cd ../opt/gradle
             ls
 
 # cd ${HOME}
