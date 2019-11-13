@@ -12,7 +12,7 @@ jobs:
     environment:
       JVM_OPTS: -Xmx3200m
       JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64
-      GRADLE_HOME: /opt/gradle/gradle-6.0.0  
+      GRADLE_HOME: /opt/gradle/gradle-6.0.0
     steps:
       - checkout
       - setup_remote_docker
@@ -20,7 +20,7 @@ jobs:
           name: Setup Gradle
           command: |
             $GRADLE_HOME/bin/gradle -v
-            GRADLE_PROPERTIES=$HOME"/.gradle/gradle.properties"
+            GRADLE_PROPERTIES=$GRADLE_HOME"/.gradle/gradle.properties"
 
 workflows:
   build:
