@@ -5,7 +5,7 @@ orbs:
   docker: circleci/docker@0.5.17
 
 jobs:
-  build:
+  build_only:
     docker: 
       - image: gradle/gradle:6.0.0-jdk8-alpine
       - image: circleci/android:api-28-alpha
@@ -21,7 +21,7 @@ jobs:
           command: |
             $GRADLE_HOME/bin/gradle -v
             GRADLE_PROPERTIES=$HOME"/.gradle/gradle.properties"
-              
+
 workflows:
   build_only:
     jobs:
