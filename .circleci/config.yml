@@ -24,11 +24,11 @@ jobs:
       - run:
           name: Create gradle.properties
           command: |
-            echo "export GRADLE_PROPERTIES=${HOME}'/.gradle/gradle.properties'"" >> $BASH_ENV
+            echo "export GRADLE_PROPERTIES=${HOME}'/.gradle/gradle.properties'" >> $BASH_ENV
             source $BASH_ENV
             echo $GRADLE_PROPERTIES
       - run: 
-          name: Create fresh keystore file
+          name: Create fresh keystore file 
           command: | # https://circleci.com/docs/2.0/contexts/#restrict-a-context-to-a-security-group-or-groups
             rm -f circleci.keystore
             printf '\n\n\n\n\n\nyes\n' | keytool -genkey -v -keystore circleci.keystore -storepass circleci -alias jkg -keyalg RSA -keysize 2048 -validity 10000
