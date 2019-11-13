@@ -16,13 +16,15 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+          docker_layer_caching: true 
       - run:
           name: Setup Gradle
           command: |
-            $GRADLE_HOME/bin/gradle -v
-            ls $GRADLE_HOME
-            # GRADLE_PROPERTIES=$GRADLE_HOME"/.gradle/gradle.properties"
-
+            cd ${HOME}/opt/gradle
+            ls
+            ${GRADLE_HOME}/bin/gradle -v
+            ls ${GRADLE_HOME}
+            
 workflows:
   build:
     jobs:
