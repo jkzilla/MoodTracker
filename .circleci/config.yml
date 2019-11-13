@@ -9,10 +9,10 @@ jobs:
     docker: 
       image: gradle/gradle:6.0.0-jdk8-alpine
       image: circleci/android:api-28-alpha
-    environment:
-      JVM_OPTS: -Xmx3200m    #??????? android specific?
-      JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64 #scripts reference this to find jdk could be added android orb
-      GRADLE_HOME: /opt/gradle/gradle-6.0.0
+      environment:
+        JVM_OPTS: -Xmx3200m    #??????? android specific?
+        JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64 #scripts reference this to find jdk could be added android orb
+        GRADLE_HOME: /opt/gradle/gradle-6.0.0
     # pre-steps:
       # - run:
       #     name: Update apt << this is already run in dockerfile
