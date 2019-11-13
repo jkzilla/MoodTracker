@@ -19,8 +19,8 @@ jobs:
       - run:
           name: Setup Gradle
           command: |
-            echo "$GRADLE_HOME/bin/gradle -v"
-            echo "ls $GRADLE_HOME"
+            $GRADLE_HOME/bin/gradle -v
+            ls $GRADLE_HOME
             # GRADLE_PROPERTIES=$GRADLE_HOME"/.gradle/gradle.properties"
 
 workflows:
