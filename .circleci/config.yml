@@ -15,9 +15,15 @@ jobs:
       GRADLE_HOME: /opt/gradle-5.5.1
     steps:
       - checkout
-      
-      # - setup_remote_docker:   
-      #     docker_layer_caching: true 
+      - setup_remote_docker:   
+          docker_layer_caching: true 
+      # restore saved caches
+      - restore_cache:
+          keys:
+            - v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+       - restore_cache:
+          keys: 
+            - v1-gradle-cache-{{ checksum "build.gradle" }}
       - run:
           name: Check Gradle Version
           command: |
@@ -49,7 +55,6 @@ jobs:
             # echo "export GOOGLE_MAPS_API_KEY_PROD=$GOOGLE_MAPS_API_KEY_PROD" >> $BASH_ENV
             echo "export TEST_API_ACCESS_TOKEN=null" >> $BASH_ENV
             echo "export TEST_API_CLIENT_ID=null" >> $BASH_ENV
-            echo "export org.gradle.caching=true" >> $BASH_ENV
             source $BASH_ENV
       - run: 
           name: Create fresh keystore file 
@@ -60,18 +65,14 @@ jobs:
           name: Run Gradle Wrapper
           command: | 
             gradle wrapper
-
-# cd ${HOME}
-# cd ..
-# cd /opt
-# ls
-# apache-ant	   apache-maven        gradle	     sbt
-# apache-ant-1.10.6  apache-maven-3.6.1  gradle-5.5.1
-# CircleCI received exit code 0
-
-
-# $GRADLE_HOME/bin/gradle -v
-# /bin/bash: /opt/gradle/gradle-5.5.1/bin/gradle: No such file or directory
+      - save_cache:
+          paths:
+            - ~/.gradle/wrapper
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - save_cache:
+          paths:
+            - ~/.gradle/caches
+          key: v1-gradle-cache-{{ checksum "build.gradle" }}
 
 workflows:
   build:
