@@ -1,17 +1,17 @@
 version: 2.1
 
 orbs:
- android: circleci/android@0.2.0
+#  android: circleci/android@0.2.0
  docker: circleci/docker@0.5.17
 
 executors: 
-  my-executor: 
-    executor: android/android <<<< this syntax doesn't work
-      sdk-version: "28"
-      variant: 'ndk'
+  # my-executor: 
+  #   executor: android/android <<<< this syntax doesn't work
+  #     sdk-version: "28"
+  #     variant: 'ndk'
     docker: 
       image: gradle/gradle:6.0.0-jdk8-alpine
-      # image: circleci/android:api-28-alpha
+      image: circleci/android:api-28-alpha
   environment:
     JVM_OPTS: -Xmx3200m    #??????? android specific?
     JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64 #scripts reference this to find jdk could be added android orb
