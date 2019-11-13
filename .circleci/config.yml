@@ -15,8 +15,9 @@ jobs:
       GRADLE_HOME: /opt/gradle-5.5.1
     steps:
       - checkout
-      - setup_remote_docker:   
-          docker_layer_caching: true 
+      
+      # - setup_remote_docker:   
+      #     docker_layer_caching: true 
       - run:
           name: Check Gradle Version
           command: |
