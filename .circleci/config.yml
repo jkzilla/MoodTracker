@@ -4,11 +4,7 @@ orbs:
 #  android: circleci/android@0.2.0
   docker: circleci/docker@0.5.17
 
-executors: 
-  # my-executor: 
-  #   executor: android/android <<<< this syntax doesn't work
-  #     sdk-version: "28"
-  #     variant: 'ndk'
+executors:
   docker: 
     image: gradle/gradle:6.0.0-jdk8-alpine
     image: circleci/android:api-28-alpha
