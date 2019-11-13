@@ -41,41 +41,41 @@ jobs:
       steps:
         - checkout
         - setup_remote_docker
-      - run:
-          name: Setup Gradle
-          command: |
-            # wget https://services.gradle.org/distributions/gradle-5.4.1-bin.zip -P /tmp
-            # sudo unzip -d /opt/gradle /tmp/gradle-*.zip
-            # ls -alR /opt/gradle/gradle-5.4.1/bin/
-            # export GRADLE_HOME=/opt/gradle/gradle-6.0.0 <<< set in env vars
-            $GRADLE_HOME/bin/gradle -v
-            GRADLE_PROPERTIES=$HOME"/.gradle/gradle.properties"
-            # echo "bintray_api_key=$bintray_api_key" > $GRADLE_PROPERTIES <<<<<< https://circleci.com/docs/2.0/contexts/#restricting-a-context
-            # echo "bintray_user=$bintray_user" >> $GRADLE_PROPERTIES
-            # rm -f circleci.keystore
-            # printf '\n\n\n\n\n\nyes\n' | keytool -genkey -v -keystore circleci.keystore -storepass circleci -alias bigcommerce -keyalg RSA -keysize 2048 -validity 10000
-            # echo "KEYSTORE_PATH=circleci.keystore" >> $GRADLE_PROPERTIES
-            # echo "KEYSTORE_PASS=circleci" >> $GRADLE_PROPERTIES
-            # echo "ALIAS=bigcommerce" >> $GRADLE_PROPERTIES
-            # echo "ALIAS_PASS=circleci" >> $GRADLE_PROPERTIES
-            # echo "SEGMENT_DEBUG_KEY=$segment_key" >> $GRADLE_PROPERTIES
-            # echo "SENTRY_DSN=$sentry_dsn" >> $GRADLE_PROPERTIES
-            # echo "SEGMENT_WRITE_KEY=$sentry_write_key" >> $GRADLE_PROPERTIES
-            # echo "SENTRY_DEBUG_DSN=$SENTRY_DEBUG_DSN" >> $GRADLE_PROPERTIES
-            # echo "SENTRY_PROD_DSN=$SENTRY_PROD_DSN" >> $GRADLE_PROPERTIES
-            # echo "BC_LOCAL_HOST=$BC_LOCAL_HOST" >> $GRADLE_PROPERTIES
-            # echo "BC_LOCAL_DOMAIN=$BC_LOCAL_DOMAIN" >> $GRADLE_PROPERTIES
-            # echo "BC_INTEGRATION_HOST=$BC_INTEGRATION_HOST" >> $GRADLE_PROPERTIES
-            # echo "BC_INTEGRATION_DOMAIN=$BC_INTEGRATION_DOMAIN" >> $GRADLE_PROPERTIES
-            # echo "BC_STAGING_HOST=$BC_STAGING_HOST" >> $GRADLE_PROPERTIES
-            # echo "BC_STAGING_DOMAIN=$BC_STAGING_DOMAIN" >> $GRADLE_PROPERTIES
-            # echo "BC_PRODUCTION_HOST=$BC_PRODUCTION_HOST" >> $GRADLE_PROPERTIES
-            # echo "BC_PRODUCTION_DOMAIN=$BC_PRODUCTION_DOMAIN" >> $GRADLE_PROPERTIES
-            # echo "GOOGLE_MAPS_API_KEY_DEBUG=$GOOGLE_MAPS_API_KEY_DEBUG" >> $GRADLE_PROPERTIES
-            # echo "GOOGLE_MAPS_API_KEY_PROD=$GOOGLE_MAPS_API_KEY_PROD" >> $GRADLE_PROPERTIES
-            # echo "TEST_API_ACCESS_TOKEN=null" >> $GRADLE_PROPERTIES
-            # echo "TEST_API_CLIENT_ID=null" >> $GRADLE_PROPERTIES
-            # /opt/gradle/gradle-6.0.0/bin/gradle wrapper  
+        - run:
+            name: Setup Gradle
+            command: |
+              # wget https://services.gradle.org/distributions/gradle-5.4.1-bin.zip -P /tmp
+              # sudo unzip -d /opt/gradle /tmp/gradle-*.zip
+              # ls -alR /opt/gradle/gradle-5.4.1/bin/
+              # export GRADLE_HOME=/opt/gradle/gradle-6.0.0 <<< set in env vars
+              $GRADLE_HOME/bin/gradle -v
+              GRADLE_PROPERTIES=$HOME"/.gradle/gradle.properties"
+              # echo "bintray_api_key=$bintray_api_key" > $GRADLE_PROPERTIES <<<<<< https://circleci.com/docs/2.0/contexts/#restricting-a-context
+              # echo "bintray_user=$bintray_user" >> $GRADLE_PROPERTIES
+              # rm -f circleci.keystore
+              # printf '\n\n\n\n\n\nyes\n' | keytool -genkey -v -keystore circleci.keystore -storepass circleci -alias bigcommerce -keyalg RSA -keysize 2048 -validity 10000
+              # echo "KEYSTORE_PATH=circleci.keystore" >> $GRADLE_PROPERTIES
+              # echo "KEYSTORE_PASS=circleci" >> $GRADLE_PROPERTIES
+              # echo "ALIAS=bigcommerce" >> $GRADLE_PROPERTIES
+              # echo "ALIAS_PASS=circleci" >> $GRADLE_PROPERTIES
+              # echo "SEGMENT_DEBUG_KEY=$segment_key" >> $GRADLE_PROPERTIES
+              # echo "SENTRY_DSN=$sentry_dsn" >> $GRADLE_PROPERTIES
+              # echo "SEGMENT_WRITE_KEY=$sentry_write_key" >> $GRADLE_PROPERTIES
+              # echo "SENTRY_DEBUG_DSN=$SENTRY_DEBUG_DSN" >> $GRADLE_PROPERTIES
+              # echo "SENTRY_PROD_DSN=$SENTRY_PROD_DSN" >> $GRADLE_PROPERTIES
+              # echo "BC_LOCAL_HOST=$BC_LOCAL_HOST" >> $GRADLE_PROPERTIES
+              # echo "BC_LOCAL_DOMAIN=$BC_LOCAL_DOMAIN" >> $GRADLE_PROPERTIES
+              # echo "BC_INTEGRATION_HOST=$BC_INTEGRATION_HOST" >> $GRADLE_PROPERTIES
+              # echo "BC_INTEGRATION_DOMAIN=$BC_INTEGRATION_DOMAIN" >> $GRADLE_PROPERTIES
+              # echo "BC_STAGING_HOST=$BC_STAGING_HOST" >> $GRADLE_PROPERTIES
+              # echo "BC_STAGING_DOMAIN=$BC_STAGING_DOMAIN" >> $GRADLE_PROPERTIES
+              # echo "BC_PRODUCTION_HOST=$BC_PRODUCTION_HOST" >> $GRADLE_PROPERTIES
+              # echo "BC_PRODUCTION_DOMAIN=$BC_PRODUCTION_DOMAIN" >> $GRADLE_PROPERTIES
+              # echo "GOOGLE_MAPS_API_KEY_DEBUG=$GOOGLE_MAPS_API_KEY_DEBUG" >> $GRADLE_PROPERTIES
+              # echo "GOOGLE_MAPS_API_KEY_PROD=$GOOGLE_MAPS_API_KEY_PROD" >> $GRADLE_PROPERTIES
+              # echo "TEST_API_ACCESS_TOKEN=null" >> $GRADLE_PROPERTIES
+              # echo "TEST_API_CLIENT_ID=null" >> $GRADLE_PROPERTIES
+              # /opt/gradle/gradle-6.0.0/bin/gradle wrapper  
 workflows:
   build_only:
     jobs:
