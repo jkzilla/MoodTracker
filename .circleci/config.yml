@@ -25,8 +25,8 @@ jobs:
           name: Create gradle.properties
           command: |
             echo 'export GRADLE_PROPERTIES=${HOME}/.gradle/gradle.properties' >> $BASH_ENV
-
-            echo "Gradle Properties should exist at ${GRADLE_PROPERTIES}"
+            source $BASH_ENV
+            echo "gradle.properties should exist at ${GRADLE_PROPERTIES}"
 
 # cd ${HOME}
 # cd ..
