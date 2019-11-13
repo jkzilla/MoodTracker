@@ -12,7 +12,7 @@ jobs:
     environment:
       JVM_OPTS: -Xmx3200m
       JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64
-      GRADLE_HOME: /opt/gradle/gradle-6.0.0
+      GRADLE_HOME: /opt/gradle/gradle-5.5.1
     steps:
       - checkout
       - setup_remote_docker:   
@@ -20,11 +20,14 @@ jobs:
       - run:
           name: Setup Gradle
           command: |
-            cd ${HOME}
-            cd ..
-            cd /opt
-            ls
-            
+            $GRADLE_HOME/bin/gradle -v
+# cd ${HOME}
+# cd ..
+# cd /opt
+# ls
+# apache-ant	   apache-maven        gradle	     sbt
+# apache-ant-1.10.6  apache-maven-3.6.1  gradle-5.5.1
+# CircleCI received exit code 0
 workflows:
   build:
     jobs:
