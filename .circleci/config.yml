@@ -15,7 +15,7 @@ jobs:
       GRADLE_HOME: /opt/gradle/gradle-6.0.0
     steps:
       - checkout
-      - setup_remote_docker: 
+      - setup_remote_docker:  
           docker_layer_caching: true 
       - run:
           name: Setup Gradle
