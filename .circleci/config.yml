@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Setup Gradle
           command: |
-            $GRADLE_HOME/bin/gradle -v
+            gradle -v          
 # cd ${HOME}
 # cd ..
 # cd /opt
@@ -28,6 +28,11 @@ jobs:
 # apache-ant	   apache-maven        gradle	     sbt
 # apache-ant-1.10.6  apache-maven-3.6.1  gradle-5.5.1
 # CircleCI received exit code 0
+
+
+# $GRADLE_HOME/bin/gradle -v
+# /bin/bash: /opt/gradle/gradle-5.5.1/bin/gradle: No such file or directory
+
 workflows:
   build:
     jobs:
