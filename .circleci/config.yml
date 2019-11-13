@@ -15,18 +15,23 @@ jobs:
       GRADLE_HOME: /opt/gradle-5.5.1
     steps:
       - checkout
+
       - setup_remote_docker:   
           docker_layer_caching: true
+
       - restore_cache:
           keys:
             - v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+
        - restore_cache:
           keys: 
             - v1-gradle-cache-{{ checksum "build.gradle" }}
+
       - run:
           name: Check Gradle Version
           command: |
             gradle -v # Gradle 5.5.1
+
       - run:
           name: Create gradle.properties
           command: |
@@ -55,19 +60,23 @@ jobs:
             echo "export TEST_API_ACCESS_TOKEN=null" >> $BASH_ENV
             echo "export TEST_API_CLIENT_ID=null" >> $BASH_ENV
             source $BASH_ENV
+
       - run: 
           name: Create fresh keystore file 
           command: | # https://circleci.com/docs/2.0/contexts/#restrict-a-context-to-a-security-group-or-groups
             rm -f circleci.keystore
             printf '\n\n\n\n\n\nyes\n' | keytool -genkey -v -keystore circleci.keystore -storepass circleci -alias jkg -keyalg RSA -keysize 2048 -validity 10000
+      
       - run:
           name: Run Gradle Wrapper
           command: | 
             gradle wrapper
+
       - save_cache:
           paths:
             - ~/.gradle/wrapper
           key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          
       - save_cache:
           paths:
             - ~/.gradle/caches
