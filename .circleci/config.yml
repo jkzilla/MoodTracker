@@ -26,7 +26,7 @@ jobs:
           command: |
             echo 'export GRADLE_PROPERTIES=${HOME}/.gradle/gradle.properties' >> $BASH_ENV
             source $BASH_ENV
-            echo "gradle.properties should exist at ${GRADLE_PROPERTIES}"
+            echo $GRADLE_PROPERTIES
       - run: 
           name: Create fresh keystore file
           command: | # https://circleci.com/docs/2.0/contexts/#restrict-a-context-to-a-security-group-or-groups
