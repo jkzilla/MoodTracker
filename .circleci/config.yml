@@ -24,8 +24,8 @@ jobs:
       - run:
           name: Create gradle.properties
           command: |
-            echo 'export GRADLE_PROPERTIES=${HOME}/.gradle/gradle.properties' >> $GRADLE_PROPERTIES
-            source $GRADLE_PROPERTIES
+            echo 'export GRADLE_PROPERTIES=${HOME}/.gradle/gradle.properties' >> $BASH_ENV
+            source $BASH_ENV
             echo "gradle.properties should exist at ${GRADLE_PROPERTIES}"
       - run: 
           name: Create fresh keystore file
