@@ -13,10 +13,11 @@ jobs:
       JVM_OPTS: -Xmx3200m
       JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64
       GRADLE_HOME: /opt/gradle-5.5.1
+
     steps:
       - checkout
 
-      - setup_remote_docker:   
+      - setup_remote_docker:
           docker_layer_caching: true
 
       - restore_cache:
@@ -76,7 +77,7 @@ jobs:
           paths:
             - ~/.gradle/wrapper
           key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-          
+
       - save_cache:
           paths:
             - ~/.gradle/caches
