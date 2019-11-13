@@ -20,10 +20,8 @@ jobs:
       - run:
           name: Setup Gradle
           command: |
-            cd ${HOME}/opt/gradle
+            cd ${HOME}/opt/
             ls
-            ${GRADLE_HOME}/bin/gradle -v
-            ls ${GRADLE_HOME}
             
 workflows:
   build:
