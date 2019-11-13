@@ -18,19 +18,14 @@ jobs:
       - setup_remote_docker:   
           docker_layer_caching: true 
       - run:
-          name: Setup Gradle
+          name: Check Gradle Version
           command: |
             gradle -v # Gradle 5.5.1
-            cd ${GRADLE_HOME}/
-            ls
-            cd ~
-            pwd
-            cd ${HOME}/
-            pwd
-            cd ${HOME}
-            cd ..
-            cd /opt/gradle
-            ls
+      - run:
+          name: Create gradle.properties
+          command: |
+            echo "export GRADLE_PROPERTIES=${HOME}/.gradle/gradle.properties"
+            echo "Gradle Properties should exist at $GRADLE_PROPERTIES"
 
 # cd ${HOME}
 # cd ..
