@@ -4,8 +4,8 @@ orbs:
 #  android: circleci/android@0.2.0
   docker: circleci/docker@0.5.17
 
-executors:
-  myexecutor:
+jobs:
+  build:
     docker: 
       image: gradle/gradle:6.0.0-jdk8-alpine
       image: circleci/android:api-28-alpha
@@ -13,15 +13,6 @@ executors:
       JVM_OPTS: -Xmx3200m    #??????? android specific?
       JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64 #scripts reference this to find jdk could be added android orb
       GRADLE_HOME: /opt/gradle/gradle-6.0.0
-      # GOOGLE_MAPS_API_KEY_DEBUG:
-      # GOOGLE_MAPS_API_KEY_PROD:
-      #  bintray_api_key:
-      # bintray_user:
-      # google_services:
-
-jobs:
-  build:
-    executor: myexecutor
     # pre-steps:
       # - run:
       #     name: Update apt << this is already run in dockerfile
