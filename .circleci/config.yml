@@ -20,10 +20,10 @@ jobs:
           docker_layer_caching: true
       - restore_cache:
           keys:
-            - v1-gradle-wrapper-{{ checksum 'gradle/wrapper/gradle-wrapper.properties' }}
+            - v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - restore_cache:
           keys: 
-            - v1-gradle-cache-{{ checksum 'build.gradle' }}
+            - v1-gradle-cache-{{ checksum "build.gradle" }}
       - run:
           name: Check Gradle Version
           command: |
