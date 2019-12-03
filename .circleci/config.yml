@@ -18,7 +18,9 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
+      - restore_cache: 
       - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
           keys:
             - v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - restore_cache:
@@ -33,29 +35,6 @@ jobs:
           name: Create gradle.properties
           command: |
             echo 'export GRADLE_PROPERTIES=${HOME}/.gradle/gradle.properties' >> $BASH_ENV
-            # echo "export bintray_api_key=$bintray_api_key" > $BASH_ENV
-            # echo "export bintray_user=$bintray_user" >> $BASH_ENV
-            echo "export KEYSTORE_PATH=circleci.keystore" >> $BASH_ENV
-            echo "export KEYSTORE_PASS=circleci" >> $BASH_ENV
-            echo "export ALIAS=jkg" >> $BASH_ENV
-            echo "export ALIAS_PASS=circleci" >> $BASH_ENV
-            # echo "export SEGMENT_DEBUG_KEY=$segment_key" >> $BASH_ENV
-            # echo "export SENTRY_DSN=$sentry_dsn" >> $BASH_ENV
-            # echo "export SEGMENT_WRITE_KEY=$sentry_write_key" >> $BASH_ENV
-            # echo "export SENTRY_DEBUG_DSN=$SENTRY_DEBUG_DSN" >> $BASH_ENV
-            # echo "export SENTRY_PROD_DSN=$SENTRY_PROD_DSN" >> $BASH_ENV
-            # echo "export BC_LOCAL_HOST=$BC_LOCAL_HOST" >> $BASH_ENV
-            # echo "export BC_LOCAL_DOMAIN=$BC_LOCAL_DOMAIN" >> $BASH_ENV
-            # echo "export BC_INTEGRATION_HOST=$BC_INTEGRATION_HOST" >> $BASH_ENV
-            # echo "export BC_INTEGRATION_DOMAIN=$BC_INTEGRATION_DOMAIN" >> $BASH_ENV
-            # echo "export BC_STAGING_HOST=$BC_STAGING_HOST" >> $BASH_ENV
-            # echo "export BC_STAGING_DOMAIN=$BC_STAGING_DOMAIN" >> $BASH_ENV
-            # echo "export BC_PRODUCTION_HOST=$BC_PRODUCTION_HOST" >> $BASH_ENV
-            # echo "export BC_PRODUCTION_DOMAIN=$BC_PRODUCTION_DOMAIN" >> $BASH_ENV
-            # echo "export GOOGLE_MAPS_API_KEY_DEBUG=$GOOGLE_MAPS_API_KEY_DEBUG" >> $BASH_ENV
-            # echo "export GOOGLE_MAPS_API_KEY_PROD=$GOOGLE_MAPS_API_KEY_PROD" >> $BASH_ENV
-            echo "export TEST_API_ACCESS_TOKEN=null" >> $BASH_ENV
-            echo "export TEST_API_CLIENT_ID=null" >> $BASH_ENV
             source $BASH_ENV
 
       - run: 
