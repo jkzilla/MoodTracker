@@ -1,5 +1,8 @@
 # MoodTracker App
 
+This application was created by 
+[**Mutwakil Mo**](https://mutwakilmo.netlify.com/) collaborated with as a sample Android project for CircleCI showcasing how to run an Android app on CircleCI 2.1. 
+
 **OpenClassrooms Project 6: Android MoodTracker App**
 
  The idea is simple: every day, you record your mood within the application. if you want, you can add a note to give more information on  _why_  you're feeling a certain way (ex. "I got a new job! 😃" or "There was no cheesecake left for dessert 😞 ").
