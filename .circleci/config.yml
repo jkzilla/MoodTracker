@@ -10,9 +10,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build debug APK and release APK
+          name: gradle wrapper test commit
           command: |
-            ./gradlew lint test
+            gradle wrapper
 #       - run:
 #           name: Create gradle.properties
 #           command: |
