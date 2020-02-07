@@ -5,9 +5,7 @@ orbs:
 
 jobs:
   build:
-    executor:
-      android/android:
-        tag: '28'
+    executor: android/android
         
     steps:
       - checkout
