@@ -12,7 +12,7 @@ jobs:
       - run:
           name: lint test
           command: |
-            ./gradlew lint test
+            ./gradlew assembleAndroidTest
 #       - run:
 #           name: Create gradle.properties
 #           command: |
