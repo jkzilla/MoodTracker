@@ -10,9 +10,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: gradle wrapper test commit
+          name: lint test
           command: |
-            ./gradlew wrapper
+            ./gradlew lint test
 #       - run:
 #           name: Create gradle.properties
 #           command: |
