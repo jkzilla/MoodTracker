@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "151582076745",
+    "firebase_url": "https://pizzabot-1376.firebaseio.com",
+    "project_id": "pizzabot-1376",
+    "storage_bucket": "pizzabot-1376.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151582076745:android:389ce00c49be1b525b3498",
+        "android_client_info": {
+          "package_name": "com.circlecitest.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151582076745-5juik0sm75auq8jo4porsdvpgqktehg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVbDyUQvpdODqgCAkWusV1S1Ka6mwfNns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151582076745-5juik0sm75auq8jo4porsdvpgqktehg5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
