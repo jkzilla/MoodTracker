@@ -12,7 +12,7 @@ jobs:
       - run:
           name: gradle wrapper test commit
           command: |
-            ./wgradle wrapper
+            ./gradlew wrapper
 #       - run:
 #           name: Create gradle.properties
 #           command: |
