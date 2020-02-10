@@ -10,9 +10,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: lint test
-          command: |
-            ./gradlew assembleAndroidTest
+          command: ./gradlew build
 #       - run:
 #           name: Create gradle.properties
 #           command: |
