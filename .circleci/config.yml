@@ -11,35 +11,8 @@ jobs:
       - checkout
       - run:
           command: ./gradlew build
-#       - run:
-#           name: Create gradle.properties
-#           command: |
-#             echo 'export GRADLE_PROPERTIES=${HOME}/.gradle/gradle.properties' >> $BASH_ENV
-#             source $BASH_ENV
-
-#       - run: 
-#           name: Create fresh keystore file 
-#           command: | # https://circleci.com/docs/2.0/contexts/#restrict-a-context-to-a-security-group-or-groups
-#             rm -f circleci.keystore
-#             printf '\n\n\n\n\n\nyes\n' | keytool -genkey -v -keystore circleci.keystore -storepass circleci -alias jkg -keyalg RSA -keysize 2048 -validity 10000
-      
-#       - run:
-#           name: Run Gradle Wrapper
-#           command: | 
-#             gradle wrapper
-
-#       - save_cache:
-#           paths:
-#             - ~/.gradle/wrapper
-#           key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-
-#       - save_cache:
-#           paths:
-#             - ~/.gradle/caches
-#           key: v1-gradle-cache-{{ checksum "build.gradle" }}
 
 workflows:
   build:
     jobs:
       - build 
-#       - test
